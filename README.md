@@ -1,26 +1,15 @@
 # Apereo CAS Authentication for Laravel
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NU3XK7VXYTYKY)
-[![Latest Stable Version](https://poser.pugx.org/sentrasoft/laravel-cas/v/stable)](https://packagist.org/packages/sentrasoft/laravel-cas)
-[![Total Downloads](https://poser.pugx.org/sentrasoft/laravel-cas/downloads)](https://packagist.org/packages/sentrasoft/laravel-cas)
-[![Monthly Downloads](https://poser.pugx.org/sentrasoft/laravel-cas/d/monthly)](https://packagist.org/packages/sentrasoft/laravel-cas)
-[![Latest Unstable Version](https://poser.pugx.org/sentrasoft/laravel-cas/v/unstable)](https://packagist.org/packages/sentrasoft/laravel-cas)
-[![License](https://poser.pugx.org/sentrasoft/laravel-cas/license)](https://packagist.org/packages/sentrasoft/laravel-cas)
-
 Easy Bring to CAS Authentication for Laravel
 
+Fork from https://github.com/sentrasoft/laravel-cas
+
 ## Install
-
-#### Via Composer
-
-``` php
-$ composer require sentrasoft/laravel-cas
-```
 
 #### Via edit `composer.json`
 
 	"require": {
-		"sentrasoft/laravel-cas": "dev-master"
+		 "samuelcalegari/laravel-cas": "@dev"
 	}
 
 Next, update Composer from the Terminal:
@@ -65,7 +54,9 @@ Add new environment variables below to your `.env`
 CAS_HOSTNAME=cas.example.com
 CAS_VALIDATION=https://cas.example.com/cas/p3/serviceValidate
 CAS_VERSION=3.0
+CAS_CONTROL_SESSIONS=true
 CAS_LOGOUT_URL=https://cas.example.com/cas/logout
+CAS_SERVICE_BASE_URL=http://127.0.0.1:8000
 ```
 
 > To see further configuration, please see and read the description for each configuration item [config/cas.php](src/Config/cas.php)

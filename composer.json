@@ -1,5 +1,5 @@
 {
-    "name": "sentrasoft/laravel-cas",
+    "name": "samuelcalegari/laravel-cas",
     "description": "Apereo CAS Authentication for Laravel",
     "keywords": [
         "cas",
@@ -21,11 +21,9 @@
         }
     ],
     "require": {
-        "php": ">=5.5.0",
-        "illuminate/support": "5.x",
-        "illuminate/http": "5.x",
-        "illuminate/contracts": "5.x",
-        "apereo/phpcas": "~1.3.4"
+        "php": ">=8.0",
+        "laravel/framework": "^9.19",
+        "apereo/phpcas": "~1.6.1"
     },
     "require-dev": {
         "phpunit/phpunit": "4.*"
@@ -43,7 +41,8 @@
             "Sentrasoft\\Cas\\Tests\\": "tests/"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": false,
     "extra": {
         "laravel": {
             "providers": [

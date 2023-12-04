@@ -46,11 +46,11 @@ class CasManager extends Manager implements Contracts\Factory
 		$this->parseConfig($config);
 
 		if ( $this->config['cas_debug'] === true ) {
-			phpCAS::setDebug();
 			phpCAS::log( 'Loaded configuration:' . PHP_EOL
 			             . serialize( $config ) );
 		} else {
-			phpCAS::setDebug( $this->config['cas_debug'] );
+			phpCAS::setLogger(); // Disable debug
+			// phpCAS::setLogger( $this->config['cas_debug'] );
 		}
 
 		phpCAS::setVerbose( $this->config['cas_verbose_errors'] );
@@ -73,6 +73,7 @@ class CasManager extends Manager implements Contracts\Factory
 
 		// set login and logout URLs of the CAS server
 		phpCAS::setServerLoginURL( $this->config['cas_login_url'] );
+
 
 		// If specified, this will override the URL the user will be returning to.
 		if ( $this->config['cas_redirect_path'] ) {
@@ -104,6 +105,7 @@ class CasManager extends Manager implements Contracts\Factory
 	 * @param $method
 	 */
 	protected function configureCas( $method = 'client' ) {
+
 		if ( $this->config['cas_enable_saml'] ) {
 			$server_type = SAML_VERSION_1_1;
 		} else {
@@ -123,11 +125,11 @@ class CasManager extends Manager implements Contracts\Factory
 		}
 
 		if ( ! phpCAS::isInitialized() ) {
-			phpCAS::$method( $server_type, $this->config['cas_hostname'],
+            phpCAS::$method( $server_type, $this->config['cas_hostname'],
 				(int) $this->config['cas_port'],
-				$this->config['cas_uri'], $this->config['cas_control_session'] );
+				$this->config['cas_uri'], $this->config['cas_service_base_url'], $this->config['cas_control_session'] );
 		}
-		
+
 		if ( $this->config['cas_enable_saml'] ) {
 			// Handle SAML logout requests that emanate from the CAS host exclusively.
 			// Failure to restrict SAML logout requests to authorized hosts could
