@@ -1,16 +1,31 @@
 # Apereo CAS Authentication for Laravel
 
-Easy Bring to CAS Authentication for Laravel
+Easy Bring to CAS Authentication for Laravel 9 and Apereo PhpCAS 1.6
 
 Fork from https://github.com/sentrasoft/laravel-cas
 
 ## Install
+Copy files into your Laravel Project:
+
+./packages/samuelcalegari/laravel-cas
 
 #### Via edit `composer.json`
 
 	"require": {
-		 "samuelcalegari/laravel-cas": "@dev"
-	}
+	...
+        "samuelcalegari/laravel-cas": "@dev"
+    },
+    
+    ...
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/samuelcalegari/laravel-cas",
+            "options": {
+                "symlink": true
+            }
+        }
+    ]
 
 Next, update Composer from the Terminal:
 
@@ -168,9 +183,6 @@ Retrieve a specific attribute by key name. The attribute returned can be either 
 ```php
 $value = Cas::user()->getAttribute('key');
 ```
-
-## Support Us
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NU3XK7VXYTYKY)
 
 Help us to keep making awesome stuff. You don't have to be a developer to support our open source work. If you want to receive personal support, or just feel all warm and fuzzy inside from helping open source development, donations are very welcome. Thank you.
 
