@@ -5,9 +5,13 @@ Easy Bring to CAS Authentication for Laravel 9 and Apereo PhpCAS 1.6
 Fork from https://github.com/sentrasoft/laravel-cas
 
 ## Install
-Copy files into your Laravel Project:
 
-./packages/samuelcalegari/laravel-cas
+
+#### Via Composer
+
+``` php
+$ composer require samuelcalegari/laravel-cas:@dev
+```
 
 #### Via edit `composer.json`
 
@@ -15,17 +19,6 @@ Copy files into your Laravel Project:
 	...
         "samuelcalegari/laravel-cas": "@dev"
     },
-    
-    ...
-    "repositories": [
-        {
-            "type": "path",
-            "url": "packages/samuelcalegari/laravel-cas",
-            "options": {
-                "symlink": true
-            }
-        }
-    ]
 
 Next, update Composer from the Terminal:
 
