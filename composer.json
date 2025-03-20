@@ -21,8 +21,8 @@
         }
     ],
     "require": {
-        "php": ">=8.0",
-        "laravel/framework": "^9.19",
+        "php": ">=8.2",
+        "laravel/framework": "^12.0",
         "apereo/phpcas": "~1.6.1"
     },
     "require-dev": {
